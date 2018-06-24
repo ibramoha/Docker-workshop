@@ -42,7 +42,7 @@ jobs:
             name: Set env variables
             command: echo 'export VERSION=$(echo $CIRCLE_SHA1 | cut -c -7)' >> $BASH_ENV
         - run:
-          name: run deploy.sh
+          name: Deploy
           command: ./deploy.sh
 
 workflows:
