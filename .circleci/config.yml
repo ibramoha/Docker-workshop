@@ -22,13 +22,13 @@ jobs:
       - run:
           name: Set env variables
           command: echo 'export VERSION=$(echo $CIRCLE_SHA1 | cut -c -7)' >> $BASH_ENV
-    - run:
+      - run:
           name: Build Docker
           command: docker build -t $DOCKER_USER/test-img:$VERSION --build-arg version=$VERSION .
-    - run:
+      - run:
           name: Docker login
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-    - run:
+      - run:
           name: Docker push test-img
           command: docker push $DOCKER_USER/test-img:$VERSION
 
