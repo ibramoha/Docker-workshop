@@ -41,7 +41,7 @@ jobs:
         - run:
             name: Set env variables
             command: echo 'export VERSION=$(echo $CIRCLE_SHA1 | cut -c -7)' >> $BASH_ENV
-         - run:
+        - run:
             name: Deploy-script-permission
             command: sudo chmod u+x ./deploy.sh
         - run:
